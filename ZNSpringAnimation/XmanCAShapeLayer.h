@@ -9,6 +9,5 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface XmanCAShapeLayer : CAShapeLayer
-@property(nonatomic, copy)NSString *keyPath;
 @property(nonatomic, copy)NSString *animationKey;
 @end

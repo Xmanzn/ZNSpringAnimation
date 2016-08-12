@@ -31,7 +31,6 @@
     anim.values = values;
     anim.duration = duration;
     anim.delegate = XmanLayer;
-    XmanLayer.keyPath = keypath;
     anim.fillMode = kCAFillModeForwards;
     anim.removedOnCompletion = NO;
     

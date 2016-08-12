@@ -78,10 +78,12 @@
 }
 
 - (IBAction)showline:(id)sender {
+    [lineShape removeFromSuperlayer];
     [self line];
 }
 
 - (IBAction)showCircle:(id)sender {
+    [circleShape removeFromSuperlayer];
     [self circle];
 
 }

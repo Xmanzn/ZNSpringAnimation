@@ -8,7 +8,6 @@
 
 #import "XmanCAShapeLayer.h"
 
-static NSString *myKeyPath;
 
 @implementation XmanCAShapeLayer
 
@@ -23,7 +22,7 @@ static NSString *myKeyPath;
 
 //layer首次加载时会调用 此方法来判断当前指定的属性key改变是否需要重新绘制。
 +(BOOL)needsDisplayForKey:(NSString *)key{
-    if ([key isEqual:myKeyPath]) {
+    if ([key isEqual:@"strokeEnd"]) {
         return  YES;
         
     }else {
@@ -31,16 +30,10 @@ static NSString *myKeyPath;
     }
 }
 
-//- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-//    
-//    [self removeAnimationForKey:_animationKey];
-//    [self setNeedsDisplay];
-//}
-
--(void)setKeyPath:(NSString *)keyPath {
-    if (_keyPath != keyPath) {
-        //        _keyPath = keyPath;
-        myKeyPath = _keyPath;
-    }
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    
+    [self removeAnimationForKey:_animationKey];
+    [self setNeedsDisplay];
 }
+
 @end
